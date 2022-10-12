@@ -12302,12 +12302,13 @@ body {
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
+  height: 100vh;
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
-  padding-top: 24px 12px;
+  padding: 24px 12px;
 }
 
 .logo {
