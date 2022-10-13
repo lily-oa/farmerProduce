@@ -12317,6 +12317,38 @@ body {
 
 .logo a {
   display: block;
+  background-image: url("../../assets/images/logoSmall.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 178px;
+  height: 34px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .logo a {
+    background-image: url(../../assets/images/logoBig.png);
+    width: 439px;
+    height: 105px;
+  }
+}
+
+.content-container {
+  padding: 16px 12px;
+  margin-bottom: 16px;
+  background-color: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 0 3px #f8d45a, 0 0 0 8px #fffcef, 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 0 3px #f8d45a, 0 0 0 8px #fffcef, 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+  height: calc(100vh - 174px);
+}
+
+@media (min-width: 768px) {
+  .content-container {
+    padding: 40px;
+    margin-bottom: 50px;
+    height: 600px;
+  }
 }
 
 /*# sourceMappingURL=all.css.map */
