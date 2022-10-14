@@ -60,6 +60,19 @@
   a{
     display: block;
     color: $body;
-    
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 28%;
+
+    border: 2px solid $body;
+    box-shadow: 0 1px 0 0 $body;
+    border-radius: 4px;
+    @include media-breakpoint-up(md) {
+      width: 12.6%;
+    }
+    &:hover{
+      background-color: $warning;
+    }
   }
 }
