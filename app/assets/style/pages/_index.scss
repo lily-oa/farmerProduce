@@ -44,3 +44,22 @@
     height: 600px;
   }
 }
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 8px;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 20px;
+  }
+  .active {
+    background-color: $warning;
+  }
+  a{
+    display: block;
+    color: $body;
+    
+  }
+}
