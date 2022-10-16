@@ -46,6 +46,7 @@
   }
 }
 
+// 按鈕群組
 .btn-group {
   display: flex;
   justify-content: center;
@@ -76,4 +77,11 @@
       background-color: $warning;
     }
   }
+}
+
+// 輸入群組
+.input-group{
+  display: flex;
+  flex-wrap: nowrap;
+  
 }
