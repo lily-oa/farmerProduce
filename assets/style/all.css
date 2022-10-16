@@ -12302,7 +12302,6 @@ body {
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
-  height: 100vh;
 }
 
 .container {
@@ -12340,11 +12339,12 @@ body {
   border-radius: 4px;
   -webkit-box-shadow: 0 0 0 3px #f8d45a, 0 0 0 8px #fffcef, 0 2px 20px 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0 0 0 3px #f8d45a, 0 0 0 8px #fffcef, 0 2px 20px 0 rgba(0, 0, 0, 0.15);
-  height: calc(100vh - 174px);
+  height: calc(100vh);
 }
 
 @media (min-width: 768px) {
   .content-container {
+    height: calc(100vh - 174px);
     padding: 40px;
     margin-bottom: 50px;
     height: 600px;
