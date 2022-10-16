@@ -87,10 +87,72 @@
   font-family: NotoSansCJKtc-Bold;
   font-weight: 600;
   margin-bottom: 16px;
-  flex-wrap: wrap;
   @include media-breakpoint-up(md) {
     flex-wrap: nowrap;
     margin-bottom: 32px;
   }
 }
 
+.input-content{
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: $primary;
+  border: 2px solid $primary;
+  width: 100%;
+  margin-bottom: 8px;
+  margin-right: 0px;
+  border-radius: 4px;
+  @include media-breakpoint-up(md) {
+    width: none;
+    margin-bottom: 0px;
+  }
+}
+
+label{
+  background-color: $primary;
+  color: #fff;
+  border: 0px solid $primary;
+  padding: 8px;
+  text-align: center;
+  white-space: nowrap;
+  width: 28%;
+  @include media-breakpoint-up(md) {
+    white-space: normal;
+    width: none;
+    display: inline-block;
+  }
+}
+
+input{
+  border: 0px solid transparent;
+  padding-left: 8px;
+  width: 72%;
+  @include media-breakpoint-up(md) {
+    width: none;
+  }
+  &:focus, :active{
+    outline: none;
+  }
+}
+
+// 搜尋
+.input-btn{
+  background: $primary;
+  border: 2px solid $primary;
+  border-radius: 4px;
+  color: #fff;
+  padding: 8px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  transition: all .15s ease-out;
+  pointer-events: none;
+  @include media-breakpoint-up(md) {
+    width: 15%;
+    pointer-events: auto;
+    border: none solid transparent;
+    
+  }
+}
+
+// 查詢結果群組
