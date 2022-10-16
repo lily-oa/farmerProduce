@@ -12398,4 +12398,12 @@ body {
   background-color: #f8d45a;
 }
 
+.input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
 /*# sourceMappingURL=all.css.map */
