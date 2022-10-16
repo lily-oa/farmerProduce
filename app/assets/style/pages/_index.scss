@@ -161,5 +161,35 @@ input{
 // ------------------------------------------------------------------
 
 .result-group {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  p{
+    font-family: NotoSansCJKtc-Bold;
+    font-size: 18px;
+    color: $primary;
+    letter-spacing: 1.12px;
+    font-weight: 600;
+    padding-left: 8px;
+    @include media-breakpoint-up(md) {
+      padding-left: 0px;
+    }
+  }
+  select{
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
 }
+
+// 篩選排序
+.select-group{
+  border: 1px solid #9a9a9a;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+// 
