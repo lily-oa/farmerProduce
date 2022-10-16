@@ -82,6 +82,15 @@
 // 輸入群組
 .input-group{
   display: flex;
-  flex-wrap: nowrap;
-  
+  justify-content: center;
+  align-items: center;
+  font-family: NotoSansCJKtc-Bold;
+  font-weight: 600;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  @include media-breakpoint-up(md) {
+    flex-wrap: nowrap;
+    margin-bottom: 32px;
+  }
 }
+
