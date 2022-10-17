@@ -294,7 +294,7 @@ input{
 }
 
 .overflow-auto{
-  overflow: auto;
+  overflow: auto;  //自動使用捲軸
   height: 60%;
 
   @include media-breakpoint-up(md) {
