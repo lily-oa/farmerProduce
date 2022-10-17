@@ -192,4 +192,68 @@ input{
   padding: 8px 16px;
 }
 
-// 
+// 表格排序
+.table-group{
+  width: 100%;
+  font-family: NotoSansCJKtc-Bold;
+  font-size: 12px;
+  letter-spacing: 0.75px;
+
+  thead {
+    text-align: center;
+  }
+
+  td,th{
+    padding: 12px 0px;
+  }
+
+  th{
+    width: 14%;
+  }
+
+  tbody {
+    text-align: center;
+    color: $body;
+
+  tr{
+    border-bottom: 2px solid #d9d9d9;
+    &:hover{
+      background-color: #f4f1ea;
+    }
+    & > td:first-child{
+      text-align-last: left;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    }
+  }
+}
+
+.table-title{
+  position: sticky;
+  top: 0;
+
+  background: #f4f1ea;
+  border-top: 2px solid $body;
+  border-bottom: 2px solid $body;
+  font-family: NotoSansCJKtc-Bold;
+  font-size: 12px;
+  letter-spacing: 0.75px;
+  color: $body;
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+  }
+}
+
+.table-wating{
+  td{
+    color: $body;
+    padding: 20px 0px;
+    border-bottom: 2px solid #d9d9d9;
+  }
+}
