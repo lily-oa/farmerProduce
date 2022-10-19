@@ -185,7 +185,7 @@ input{
   }
 }
 
-// 篩選排序
+// 篩選排序(375版型時下面那一顆)
 .select-group{
   border: 1px solid #9a9a9a;
   border-radius: 20px;
@@ -266,9 +266,9 @@ input{
 }
 
 .d-mobile-none{
-  display: block;
+  display: none;
   @include media-breakpoint-up(md) {
-    display: none;
+    display: block;
   }
 }
 
