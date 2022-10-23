@@ -30,11 +30,53 @@ function init(){
 
   inputBtn.addEventListener('click', searchCrops, false);
   inputTxt.addEventListener('keyup', searchCropsKey, false );  //鍵盤搜尋
+  btnGroup.addEventListener('click', filterCropType, false);   //按鈕分類篩選資料
+  tableSortGroup.addEventListener('click', sortTableBytitle, false); // nav
 
 }
 
-
 getData();
+
+// 更新渲染畫面使用
+function update(showData) {
+
+  let str = '';
+  showData.forEach(function(item){
+    let content = `
+      <tr>
+        <td>${item.作物名稱}</td>
+        <td>${item.市場名稱}</td>
+        <td>${item.上價}</td>
+        <td>${item.中價}</td>
+        <td>${item.下價}</td>
+        <td>${item.平均價}</td>
+        <td>${item.交易量}</td>
+      </tr>
+    `;
+    str += content;
+  });
+  productList.innerHTML = str;
+}
+
+// 按鈕分類篩選資料
+function filterCropType(e){
+  e.preventDefault();
+  if(e.target.nodeName !== 'A'){
+    return;
+  };
+
+  btnCropsType.forEach(item =>{
+    item.classList.remove('active');
+    e.target.classList.add('active');
+  });
+
+  let type = e.target.dataset.type;
+  filterData = data.filter(item => type === item.種類代碼);
+
+  resultName.textContent = e.target.textContent;
+  resetSelect();
+  update(filterData);
+}
 
 // 搜尋資料
 function searchCrops(e){
@@ -58,7 +100,7 @@ function searchCrops(e){
     productList.innerHTML = content;
     return;
   };
-  // update(filterData);
+  update(filterData);
 }
 
 //鍵盤搜尋事件
@@ -67,10 +109,15 @@ function searchCrops(e){
       return;
     };
     inputBtn.classList.add('btn-active');
-    if(e.key === 'Entre'){
+    if(e.key === 'Enter'){
       searchCrops(e);
-    }
+    };
   }
+
+// select change 下拉選單 
+function changeSelect(e){
+  
+}
 
 
 // 清空下拉選單
