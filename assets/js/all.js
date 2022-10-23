@@ -28,9 +28,45 @@ function init() {
   productList.innerHTML = "\n  <tr class=\"table-waiting\">\n    <td colspan=\"7\">\u8ACB\u8F38\u5165\u4E26\u641C\u5C0B\u60F3\u6BD4\u50F9\u7684\u4F5C\u7269\u540D\u7A31^_^</td>\n  </tr>";
   inputBtn.addEventListener('click', searchCrops, false);
   inputTxt.addEventListener('keyup', searchCropsKey, false); //鍵盤搜尋
+
+  btnGroup.addEventListener('click', filterCropType, false); //按鈕分類篩選資料
+
+  tableSortGroup.addEventListener('click', sortTableBytitle, false); // nav
 }
 
-getData(); // 搜尋資料
+getData(); // 更新渲染畫面使用
+
+function update(showData) {
+  var str = '';
+  showData.forEach(function (item) {
+    var content = "\n      <tr>\n        <td>".concat(item.作物名稱, "</td>\n        <td>").concat(item.市場名稱, "</td>\n        <td>").concat(item.上價, "</td>\n        <td>").concat(item.中價, "</td>\n        <td>").concat(item.下價, "</td>\n        <td>").concat(item.平均價, "</td>\n        <td>").concat(item.交易量, "</td>\n      </tr>\n    ");
+    str += content;
+  });
+  productList.innerHTML = str;
+} // 按鈕分類篩選資料
+
+
+function filterCropType(e) {
+  e.preventDefault();
+
+  if (e.target.nodeName !== 'A') {
+    return;
+  }
+
+  ;
+  btnCropsType.forEach(function (item) {
+    item.classList.remove('active');
+    e.target.classList.add('active');
+  });
+  var type = e.target.dataset.type;
+  filterData = data.filter(function (item) {
+    return type === item.種類代碼;
+  });
+  resultName.textContent = e.target.textContent;
+  resetSelect();
+  update(filterData);
+} // 搜尋資料
+
 
 function searchCrops(e) {
   if (inputTxt.value.trim() !== "") {
@@ -57,7 +93,8 @@ function searchCrops(e) {
     return;
   }
 
-  ; // update(filterData);
+  ;
+  update(filterData);
 } //鍵盤搜尋事件
 
 
@@ -69,10 +106,15 @@ function searchCropsKey(e) {
   ;
   inputBtn.classList.add('btn-active');
 
-  if (e.key === 'Entre') {
+  if (e.key === 'Enter') {
     searchCrops(e);
   }
-} // 清空下拉選單
+
+  ;
+} // select change 下拉選單 
+
+
+function changeSelect(e) {} // 清空下拉選單
 
 
 function resetSelect() {
