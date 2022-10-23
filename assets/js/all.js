@@ -26,9 +26,11 @@ function getData() {
 
 function init() {
   productList.innerHTML = "\n  <tr class=\"table-waiting\">\n    <td colspan=\"7\">\u8ACB\u8F38\u5165\u4E26\u641C\u5C0B\u60F3\u6BD4\u50F9\u7684\u4F5C\u7269\u540D\u7A31^_^</td>\n  </tr>";
-  inputBtn.addEventListener('click', searchCrops, false); // inputTxt.addEventListener('keyup', searchCropsKey, false );
-} // 搜尋資料
+  inputBtn.addEventListener('click', searchCrops, false);
+  inputTxt.addEventListener('keyup', searchCropsKey, false); //鍵盤搜尋
+}
 
+getData(); // 搜尋資料
 
 function searchCrops(e) {
   if (inputTxt.value.trim() !== "") {
@@ -56,9 +58,22 @@ function searchCrops(e) {
   }
 
   ; // update(filterData);
-}
+} //鍵盤搜尋事件
 
-getData(); // 清空下拉選單
+
+function searchCropsKey(e) {
+  if (inputTxt.value.trim() == '') {
+    return;
+  }
+
+  ;
+  inputBtn.classList.add('btn-active');
+
+  if (e.key === 'Entre') {
+    searchCrops(e);
+  }
+} // 清空下拉選單
+
 
 function resetSelect() {
   selectList[0].value = '排序篩選';
