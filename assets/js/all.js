@@ -34,7 +34,8 @@ function searchCrops(e) {
     inputBtn.classList.add('btn-active');
   } else {
     return;
-  }
+  } // 過濾輸入值的空白
+
 
   filterData = data.filter(function (item) {
     return item.作物名稱.match(inputTxt.value.trim());
