@@ -22,6 +22,7 @@ function getData(){
 }
 
 // 預設渲染畫面  初始值
+
 function init(){
   productList.innerHTML = `
   <tr class="table-waiting">
@@ -39,6 +40,7 @@ function searchCrops(e){
     return;
   }
 
+  // 過濾輸入值的空白
   filterData = data.filter(item => item.作物名稱.match(inputTxt.value.trim()));
 }
 getData();
