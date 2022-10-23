@@ -29,9 +29,12 @@ function init(){
   </tr>`;
 
   inputBtn.addEventListener('click', searchCrops, false);
-  // inputTxt.addEventListener('keyup', searchCropsKey, false );
+  inputTxt.addEventListener('keyup', searchCropsKey, false );  //鍵盤搜尋
 
 }
+
+
+getData();
 
 // 搜尋資料
 function searchCrops(e){
@@ -57,7 +60,17 @@ function searchCrops(e){
   };
   // update(filterData);
 }
-getData();
+
+//鍵盤搜尋事件
+  function searchCropsKey(e){
+    if(inputTxt.value.trim()==''){
+      return;
+    };
+    inputBtn.classList.add('btn-active');
+    if(e.key === 'Entre'){
+      searchCrops(e);
+    }
+  }
 
 
 // 清空下拉選單
