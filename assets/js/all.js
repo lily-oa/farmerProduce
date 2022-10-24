@@ -31,7 +31,7 @@ function init() {
 
   btnGroup.addEventListener('click', filterCropType, false); //按鈕分類篩選資料
 
-  tableSortGroup.addEventListener('click', sortTableBytitle, false); // nav
+  tableSortGroup.addEventListener('click', sortTableBytitle, false); //nav上的按鈕功能
 }
 
 getData(); // 更新渲染畫面使用
@@ -112,23 +112,39 @@ function searchCropsKey(e) {
 
   ;
 } // select change 下拉選單 
+// function changeSelect(e){
+// }
+// 進階篩選 表單內排序
 
 
-function changeSelect(e) {} // 清空下拉選單
+function sortTableBytitle(e) {
+  if (e.target.nodeName !== 'I') {
+    return;
+  } else {
+    var sortTitle = e.target.dataset.title;
+    var sortDirection = e.target.dataset.sort;
+
+    if (sortDirection === 'up') {
+      filterData.sort(function (a, b) {
+        return b[sortTitle] - a[sortTitle];
+      });
+    } else if (sortDirection === 'down') {
+      filterData.sort(function (a, b) {
+        return a[sortTitle] - b[sortTitle];
+      });
+    }
+
+    ;
+    selectList.forEach(function (item, index) {
+      selectList[index].value = "\u4F9D".concat(sortTitle, "\u6392\u5E8F");
+    });
+    update(filterData);
+  }
+} // 清空下拉選單
 
 
 function resetSelect() {
   selectList[0].value = '排序篩選';
   selectList[1].value = '排序';
-} //---------------------------------------------練習
-
-
-var home = {
-  motherName: "Manry1",
-  fatherName: "Tom",
-  dogs: 3,
-  isWackUp: false
-};
-var a = 'motherName';
-console.log(home[a]);
+}
 //# sourceMappingURL=all.js.map
