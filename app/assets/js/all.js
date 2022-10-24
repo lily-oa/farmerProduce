@@ -128,12 +128,9 @@ function resetSelect() {
 
 
 //---------------------------------------------練習
-let home = {
-  motherName : "Manry1",
-  fatherName : "Tom",
-  dogs : 3,
-  isWackUp : false,
-};
+// 函式陳述式
+const num = (x) => {
+  return `數字相乘為${x*x}`;
+}
 
-let a = 'motherName'
-console.log(home[a]);
+console.log(num(9));
