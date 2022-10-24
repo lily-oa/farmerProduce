@@ -144,7 +144,6 @@ function changeSelect(e){
       sortChange('交易量');
       break;      
   }
-  console.log(sortChange.value);
 }
 
 // select change 下拉選單 
