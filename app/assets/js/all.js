@@ -182,3 +182,12 @@ function resetSelect() {
 
 
 
+
+function getData2(){
+  axios.get(url2)
+  .then(function(response){
+    data = response.data.filter(item => item.作物名稱);
+    // console.log(data);
+    init(); //非同步
+  });
+}
