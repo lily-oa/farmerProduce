@@ -112,9 +112,14 @@ function searchCropsKey(e) {
 
   ;
 } // select change 下拉選單 
-// function changeSelect(e){
-// }
-// 進階篩選 表單內排序
+
+
+function changeSelect(e) {
+  filterData.sort(function (a, b) {
+    return a[e] - b[e];
+  });
+  update(filterData);
+} // 進階篩選 表單內排序
 
 
 function sortTableBytitle(e) {
