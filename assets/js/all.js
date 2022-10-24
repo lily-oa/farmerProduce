@@ -111,10 +111,39 @@ function searchCropsKey(e) {
   }
 
   ;
-} // select change 下拉選單 
+} // select change 下拉選單
 
 
 function changeSelect(e) {
+  if (filterData.length == 0) {
+    return;
+  }
+
+  switch (e.target.value) {
+    case '依上價排序':
+      sortChange('上價');
+      break;
+
+    case '依中價排序':
+      sortChange('中價');
+      break;
+
+    case '依下價排序':
+      sortChange('下價');
+      break;
+
+    case '依平均價排序':
+      sortChange('平均價');
+      break;
+
+    case '依交易量排序':
+      sortChange('交易量');
+      break;
+  }
+} // select change 下拉選單 
+
+
+function sortChange(e) {
   filterData.sort(function (a, b) {
     return a[e] - b[e];
   });
