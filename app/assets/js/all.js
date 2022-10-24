@@ -31,7 +31,7 @@ function init(){
   inputBtn.addEventListener('click', searchCrops, false);
   inputTxt.addEventListener('keyup', searchCropsKey, false );  //鍵盤搜尋
   btnGroup.addEventListener('click', filterCropType, false);   //按鈕分類篩選資料
-  tableSortGroup.addEventListener('click', sortTableBytitle, false); // nav
+  tableSortGroup.addEventListener('click', sortTableBytitle, false); //nav上的按鈕功能
 
 }
 
@@ -115,8 +115,29 @@ function searchCrops(e){
   }
 
 // select change 下拉選單 
-function changeSelect(e){
+// function changeSelect(e){
   
+// }
+
+// 進階篩選 表單內排序
+function sortTableBytitle(e){
+  if(e.target.nodeName !== 'I'){
+    return;
+  }else{
+    let sortTitle = e.target.dataset.title;
+    let sortDirection = e.target.dataset.sort;
+    
+    if(sortDirection === 'up'){
+      filterData.sort((a, b) => b[sortTitle] - a[sortTitle]);
+    }else if(sortDirection === 'down'){
+      filterData.sort((a, b) => a[sortTitle] - b[sortTitle]);
+    };
+
+    selectList.forEach(function(item, index){
+      selectList[index].value = `依${sortTitle}排序`;
+    });
+    update(filterData);
+  }
 }
 
 
@@ -125,12 +146,3 @@ function resetSelect() {
   selectList[0].value = '排序篩選';
   selectList[1].value = '排序';
 }
-
-
-//---------------------------------------------練習
-// 函式陳述式
-const num = (x) => {
-  return `數字相乘為${x*x}`;
-}
-
-console.log(num(9));
