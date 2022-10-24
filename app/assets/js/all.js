@@ -129,8 +129,11 @@ function resetSelect() {
 
 //---------------------------------------------練習
 let home = {
-  motherName : "Manry",
+  motherName : "Manry1",
   fatherName : "Tom",
   dogs : 3,
   isWackUp : false,
 };
+
+let a = 'motherName'
+console.log(home[a]);
