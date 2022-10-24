@@ -157,7 +157,13 @@ input{
 
 // 查詢結果群組
 //-------------------------------------------------------------------
-// 這裡有需要寫 .btn-active{} 的 css   btn-active 是寫在js 裡
+// 
+.btn-active {
+  background: $warning;
+  border: 2px solid $warning;
+  pointer-events: auto;
+  transition: all .15s ease-in;
+}
 // ------------------------------------------------------------------
 
 .result-group {
