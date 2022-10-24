@@ -124,9 +124,11 @@ function resetSelect() {
 
 
 var home = {
-  motherName: "Manry",
+  motherName: "Manry1",
   fatherName: "Tom",
   dogs: 3,
   isWackUp: false
 };
+var a = 'motherName';
+console.log(home[a]);
 //# sourceMappingURL=all.js.map
