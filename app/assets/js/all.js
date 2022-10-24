@@ -116,7 +116,7 @@ function searchCrops(e){
 
 // select change 下拉選單 
 function changeSelect(e){
-  filterData.sort(a, b) => a[e]-b[e];
+  filterData.sort((a, b) => a[e]-b[e]);
   update(filterData);
 }
 
