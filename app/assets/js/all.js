@@ -115,9 +115,10 @@ function searchCrops(e){
   }
 
 // select change 下拉選單 
-// function changeSelect(e){
-  
-// }
+function changeSelect(e){
+  filterData.sort(a, b) => a[e]-b[e];
+  update(filterData);
+}
 
 // 進階篩選 表單內排序
 function sortTableBytitle(e){
