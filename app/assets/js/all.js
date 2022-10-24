@@ -105,7 +105,7 @@ function searchCrops(e){
 
 //鍵盤搜尋事件
   function searchCropsKey(e){
-    if(inputTxt.value.trim()==''){
+    if(inputTxt.value.trim() ==''){
       return;
     };
     inputBtn.classList.add('btn-active');
@@ -125,3 +125,12 @@ function resetSelect() {
   selectList[0].value = '排序篩選';
   selectList[1].value = '排序';
 }
+
+
+//---------------------------------------------練習
+let home = {
+  motherName : "Manry",
+  fatherName : "Tom",
+  dogs : 3,
+  isWackUp : false,
+};
