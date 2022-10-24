@@ -191,4 +191,14 @@ function resetSelect() {
   selectList[0].value = '排序篩選';
   selectList[1].value = '排序';
 }
+
+function getData2() {
+  axios.get(url2).then(function (response) {
+    data = response.data.filter(function (item) {
+      return item.作物名稱;
+    }); // console.log(data);
+
+    init(); //非同步
+  });
+}
 //# sourceMappingURL=all.js.map
