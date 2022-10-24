@@ -12499,6 +12499,15 @@ input:focus, input :active {
   }
 }
 
+.btn-active {
+  background: #f8d45a;
+  border: 2px solid #f8d45a;
+  pointer-events: auto;
+  -webkit-transition: all .15s ease-in;
+  -o-transition: all .15s ease-in;
+  transition: all .15s ease-in;
+}
+
 .result-group {
   display: -webkit-box;
   display: -ms-flexbox;
