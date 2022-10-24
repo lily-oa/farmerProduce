@@ -5,7 +5,7 @@ const btnCropsType = document.querySelectorAll('.btn-group a');  //共三顆按�
 const inputTxt = document.querySelector('.input-txt');
 const inputBtn = document.querySelector('.input-btn');
 const resultName = document.querySelector('.result-name');
-const selectList = document.querySelector('.select-group');
+const selectList = document.querySelectorAll('.select-group'); //querySelectorAll 
 const tableSortGroup = document.querySelector('.table-title');
 
 let data;
@@ -32,7 +32,15 @@ function init(){
   inputTxt.addEventListener('keyup', searchCropsKey, false );  //鍵盤搜尋
   btnGroup.addEventListener('click', filterCropType, false);   //按鈕分類篩選資料
   tableSortGroup.addEventListener('click', sortTableBytitle, false); //nav上的按鈕功能
+  selectListAll();
+}
 
+
+//select pc mobile 兩個下拉選單監聽事件
+function selectListAll(){
+  selectList.forEach(function(item, index){
+    selectList[index].addEventListener('change', changeSelect, false);
+  });
 }
 
 getData();
