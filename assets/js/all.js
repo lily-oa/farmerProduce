@@ -8,7 +8,8 @@ var btnCropsType = document.querySelectorAll('.btn-group a'); //共三顆按鈕�
 var inputTxt = document.querySelector('.input-txt');
 var inputBtn = document.querySelector('.input-btn');
 var resultName = document.querySelector('.result-name');
-var selectList = document.querySelector('.select-group');
+var selectList = document.querySelectorAll('.select-group'); //querySelectorAll 
+
 var tableSortGroup = document.querySelector('.table-title');
 var data;
 var filterData = []; //---- axios撈取資料 ---- //
@@ -32,6 +33,15 @@ function init() {
   btnGroup.addEventListener('click', filterCropType, false); //按鈕分類篩選資料
 
   tableSortGroup.addEventListener('click', sortTableBytitle, false); //nav上的按鈕功能
+
+  selectListAll();
+} //select pc mobile 兩個下拉選單監聽事件
+
+
+function selectListAll() {
+  selectList.forEach(function (item, index) {
+    selectList[index].addEventListener('change', changeSelect, false);
+  });
 }
 
 getData(); // 更新渲染畫面使用
