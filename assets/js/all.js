@@ -12,7 +12,8 @@ var selectList = document.querySelectorAll('.select-group'); //querySelectorAll
 
 var tableSortGroup = document.querySelector('.table-title');
 var data;
-var filterData = []; //---- axios撈取資料 ---- //
+var filterData = [];
+var currentSearch = ''; //---- axios撈取資料 ---- //
 
 function getData() {
   axios.get(url).then(function (response) {
@@ -190,5 +191,6 @@ function sortTableBytitle(e) {
 function resetSelect() {
   selectList[0].value = '排序篩選';
   selectList[1].value = '排序';
+  currentSearch = '';
 }
 //# sourceMappingURL=all.js.map
