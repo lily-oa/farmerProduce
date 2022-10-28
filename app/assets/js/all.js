@@ -10,6 +10,7 @@ const tableSortGroup = document.querySelector('.table-title');
 
 let data;
 let filterData = [];
+let currentSearch = '';
 
 //---- axios撈取資料 ---- //
 function getData(){
@@ -177,5 +178,6 @@ function sortTableBytitle(e){
 function resetSelect() {
   selectList[0].value = '排序篩選';
   selectList[1].value = '排序';
+  currentSearch = '';
 }
 
