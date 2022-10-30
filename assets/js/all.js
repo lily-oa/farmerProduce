@@ -45,11 +45,11 @@ function init() {
 function formSubmit(e) {
   e.preventDefault();
 
-  if (input.value === '') {
+  if (inputTxt.value === '') {
     currentSearch = '';
     return;
   } else {
-    currentSearch = input.vale;
+    currentSearch = inputTxt.vale;
     searchCrops();
     update(filterData);
   }
@@ -97,6 +97,17 @@ function filterCropType(e) {
 
 
 function searchCrops(e) {
+  filterData = data.filter(function (item) {
+    return item.作物名稱.match(inputTxt.value.trim());
+  });
+  filterData = data.filter(function (item) {
+    if (item.作物名稱 === null) {
+      return false;
+    } else {
+      return item.作物名稱.match(inputTxt.value);
+    }
+  });
+
   if (inputTxt.value.trim() !== "") {
     inputBtn.classList.add('btn-active');
   } else {
