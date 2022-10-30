@@ -146,7 +146,6 @@ input{
   display: block;
   text-align: center;
   transition: all .15s ease-out;
-  pointer-events: none;
   @include media-breakpoint-up(md) {
     width: 15%;
     border: none solid transparent;
