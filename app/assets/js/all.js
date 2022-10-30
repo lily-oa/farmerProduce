@@ -107,7 +107,6 @@ function filterCropType(e){
 
 // 搜尋資料
 function searchCrops(e){
-  filterData = data.filter((item) => item.作物名稱.match(inputTxt.value.trim()));
   filterData = data.filter((item) => {
     if(item.作物名稱 === null){
       return false;
