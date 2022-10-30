@@ -12,7 +12,7 @@ var selectList = document.querySelectorAll('.select-group'); //querySelectorAll
 
 var tableSortGroup = document.querySelector('.table-title'); // Search lists by input
 
-var form = document.querySelector('[data-priceNet-form]');
+var form = document.querySelector('.formSubmit');
 var data;
 var filterData = [];
 var currentSearch = ''; //---- axios撈取資料 ---- //
