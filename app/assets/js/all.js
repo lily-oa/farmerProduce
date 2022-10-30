@@ -7,10 +7,13 @@ const inputBtn = document.querySelector('.input-btn');
 const resultName = document.querySelector('.result-name');
 const selectList = document.querySelectorAll('.select-group'); //querySelectorAll 
 const tableSortGroup = document.querySelector('.table-title');
+// Search lists by input
+const form = document.querySelector('[data-priceNet-form]');
 
 let data;
 let filterData = [];
 let currentSearch = '';
+
 
 //---- axios撈取資料 ---- //
 function getData(){
@@ -34,8 +37,23 @@ function init(){
   btnGroup.addEventListener('click', filterCropType, false);   //按鈕分類篩選資料
   tableSortGroup.addEventListener('click', sortTableBytitle, false); //nav上的按鈕功能
   selectListAll();
+  form.addEventListener('submit', formSubmit, false);
 }
 
+
+
+// Search lists by input 
+  function formSubmit(e){
+    e.preventDefault();
+    if(input.value === ''){
+      currentSearch = '';
+      return;
+    }else{
+    currentSearch = input.vale;
+    searchCrops();
+    update(filterData);
+    }
+  }
 
 //select pc mobile 兩個下拉選單監聽事件
 function selectListAll(){
@@ -96,7 +114,7 @@ function searchCrops(e){
   }
 
   // 過濾輸入值的空白
-  filterData = data.filter(item => item.作物名稱.match(inputTxt.value.trim()));
+  filterData = data.filter((item) => item.作物名稱.match(inputTxt.value.trim()));
   btnCropsType.forEach(item => item.classList.remove('active'));
 
   resultName.textContent = inputTxt.value.trim();
@@ -178,6 +196,5 @@ function sortTableBytitle(e){
 function resetSelect() {
   selectList[0].value = '排序篩選';
   selectList[1].value = '排序';
-  currentSearch = '';
 }
 
