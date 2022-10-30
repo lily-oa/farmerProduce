@@ -8,7 +8,7 @@ const resultName = document.querySelector('.result-name');
 const selectList = document.querySelectorAll('.select-group'); //querySelectorAll 
 const tableSortGroup = document.querySelector('.table-title');
 // Search lists by input
-const form = document.querySelector('[data-priceNet-form]');
+const form = document.querySelector('.formSubmit');
 
 let data;
 let filterData = [];
