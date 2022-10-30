@@ -98,9 +98,6 @@ function filterCropType(e) {
 
 function searchCrops(e) {
   filterData = data.filter(function (item) {
-    return item.作物名稱.match(inputTxt.value.trim());
-  });
-  filterData = data.filter(function (item) {
     if (item.作物名稱 === null) {
       return false;
     } else {
