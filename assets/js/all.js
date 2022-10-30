@@ -10,7 +10,9 @@ var inputBtn = document.querySelector('.input-btn');
 var resultName = document.querySelector('.result-name');
 var selectList = document.querySelectorAll('.select-group'); //querySelectorAll 
 
-var tableSortGroup = document.querySelector('.table-title');
+var tableSortGroup = document.querySelector('.table-title'); // Search lists by input
+
+var form = document.querySelector('[data-priceNet-form]');
 var data;
 var filterData = [];
 var currentSearch = ''; //---- axios撈取資料 ---- //
@@ -36,6 +38,21 @@ function init() {
   tableSortGroup.addEventListener('click', sortTableBytitle, false); //nav上的按鈕功能
 
   selectListAll();
+  form.addEventListener('submit', formSubmit, false);
+} // Search lists by input 
+
+
+function formSubmit(e) {
+  e.preventDefault();
+
+  if (input.value === '') {
+    currentSearch = '';
+    return;
+  } else {
+    currentSearch = input.vale;
+    searchCrops();
+    update(filterData);
+  }
 } //select pc mobile 兩個下拉選單監聽事件
 
 
@@ -191,6 +208,5 @@ function sortTableBytitle(e) {
 function resetSelect() {
   selectList[0].value = '排序篩選';
   selectList[1].value = '排序';
-  currentSearch = '';
 }
 //# sourceMappingURL=all.js.map
