@@ -12494,7 +12494,6 @@ input:focus, input :active {
 @media (min-width: 768px) {
   .input-btn {
     width: 15%;
-    pointer-events: auto;
     border: none solid transparent;
   }
 }
