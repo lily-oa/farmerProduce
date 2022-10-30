@@ -149,7 +149,6 @@ input{
   pointer-events: none;
   @include media-breakpoint-up(md) {
     width: 15%;
-    pointer-events: auto;
     border: none solid transparent;
     
   }
